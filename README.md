@@ -1,6 +1,6 @@
 # Coding Challenge 
 
-(https://github.com/tebesfinwo/coding-challenge)[https://github.com/tebesfinwo/coding-challenge]
+[https://github.com/tebesfinwo/coding-challenge](https://github.com/tebesfinwo/coding-challenge)
 
 ## Requirements 
 1. NodeJS
