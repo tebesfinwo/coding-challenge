@@ -66,7 +66,7 @@ $(function() {
 			genderValue = self.find("[name='gender']").val(), 
 			stateValue = self.find("[name='state']").val();
 
-			if ( !(fromValue && toValue && genderValue && stateValue) ) {
+			if ( !fromValue && !toValue && !genderValue && !stateValue ) {
 				self.before($('<span>', { text : "All of the fields are empty.", class: 'danger' }));
 				return;
 			}
