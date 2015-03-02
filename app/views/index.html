@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<nav>
+    <ul>
+        <li>
+            <a class="active" href="" id="home">Home</a>
+        </li>
+        <li>
+            <a href="/users" id="users">Users</a>
+        </li>
+    </ul>
+</nav>
+<main class="home">
+    <section>
+        <article>
+            <h1><a href="#">Title of article</a></h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt.
+            </p>
+            <a class="more" href="#">Read More</a>
+        </article>
+        <article>
+            <h1><a href="#">Title of article</a></h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt.
+            </p>
+            <a class="more" href="#">Read More</a>
+        </article>
+        <article>
+            <h1><a href="#">Title of article</a></h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti officiis inventore iste, unde rem totam distinctio, obcaecati odit sapiente omnis asperiores consequuntur voluptatibus magni porro dolor aliquam veritatis ipsam nesciunt.
+            </p>
+            <a class="more" href="#">Read More</a>
+        </article>
+    </section>
+    <aside>
+        <h2>Users Over 21</h2>
+        <ul>
+            {% for result in results %}
+            <li><a href="">{{ result.user.name.title }} {{ result.user.name.first }} {{ result.user.name.last }}</a></li>
+            {% endfor %}
+        </ul>
+        <a class="new-user" href="#">New User</a>
+    </aside>
+</main>
+<dialog class="modal new-user-modal">
+    <span class="close">X</span>
+    <h1>New User</h1>
+    <form method="post" action="/users/new" class="new-user-form">
+        <div class="form-group">
+            <label class="form-label">Name :</label>
+            <input type="text" name="name" class="form-field" >
+        </div>
+        <div class="form-group">
+            <label class="form-label">Email :</label>
+            <input type="email" name="email" class="form-field">
+        </div>
+        <div class="form-group" >
+            <label class="form-label">Phone Number :</label>
+            <input type="text" name="phone" class="form-field">
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</dialog>
+{% endblock %}

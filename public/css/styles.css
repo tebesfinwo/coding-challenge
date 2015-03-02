@@ -1,0 +1,400 @@
+/***********************************
+* RESET
+***********************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/***********************************
+* Site styles
+***********************************/
+
+body {
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.overlay {
+    overflow: hidden;
+}
+
+.overlay:after {
+    content: "";
+    display: block;
+    position: fixed; /* could also be absolute */ 
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    transition: opacity 2s linear;
+}
+
+a {
+    color: #910000;
+    text-decoration: none;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
+
+.danger {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+header {
+    background: #eee;
+    height: 100px;
+    text-align: center;
+    width: 100%;
+}
+    header h1 {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 100px;
+    }
+nav {
+    background: #333;
+    margin: 0 0 20px;
+    width: 100%;
+}
+    nav ul {
+        height: 40px;
+    }
+        nav li {
+            display: inline-block;
+        }
+            nav a {
+                color: #fff;
+                display: block;
+                font-weight: bold;
+                line-height: 40px;
+                padding: 0 20px;
+            }
+            nav .active {
+                background: #555;
+                cursor: default;
+            }
+
+main {
+    overflow: hidden;
+    margin: 0 0 50px;
+}
+    .home section {
+        float: left;
+        width: 69.7916666667%;
+        margin-left: 1.041666667%
+    }
+    .home aside {
+        float: right;
+        width: 26.04166667%;
+    }
+    .users h1 {
+        font-size: 20px;
+        margin: 0 0 15px;
+    }
+    .users .filter-form {
+        margin-bottom: 5px;
+        padding-left: 10px;
+    }
+        .users .filter-form input[type='number'] {
+            width: 50px;
+        }
+    .users .form-group {
+        margin-top: 10px; 
+        margin-bottom: 10px;
+    }
+    .users table {
+        text-align: left;
+        width: 100%;
+    }
+        .users th, .users td {
+            height: 30px;
+            vertical-align: middle;
+        }
+        .users th {
+            background: #555;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .users tr:nth-child(2n) td {
+            background: #ccc;
+        }
+        .users .name {
+            padding: 0 0 0 1%;
+            width: 19%;
+            cursor: pointer;
+        }
+        .users .age {
+            width: 10%;
+        }
+        .users .email {
+            width: 30%;
+        }
+        .users .phone {
+            width: 20%;
+        }
+        .users .state {
+            width: 20%;
+            text-transform: capitalize;
+        }
+
+form .form-group {
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+input[type='submit'] {
+    background: #2980b9;
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="number"], select {
+  padding: 5px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+
+article {
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+}
+    article:last-of-type {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+    article h1 {
+        font-size: 20px;
+        font-weight: 20px;
+        margin: 0 0 10px;
+    }
+        article h1 a {
+            color
+        }
+    article p {
+        line-height: 16px;
+        margin: 0 0 10px;
+    }
+    article .more {
+        background: #910000;
+        color: #fff;
+        display: inline-block;
+        padding: 10px;
+    }
+    article .more:hover, article .more:active, article .more:focus {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+aside h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+aside ul {
+    margin: 0 0 30px;
+}
+    aside li {
+        margin-bottom: 5px;
+    }
+
+aside .new-user {
+    background: #000091;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 20px 40px;
+}
+    
+    aside .new-user:hover, aside .new-user:active, aside .new-user:focus, 
+    input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9); 
+    }
+
+dialog {
+    /* arbitrary styling */
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    height:200px;
+    width:300px;
+    /* change position to fixed if you want to prevent the dialog from scrolling away, and center it */
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin-left: -150px;
+    margin-top:-100px;
+    z-index: 11;
+    transition: all 2s ease 0s;
+}
+
+    dialog h1 {
+        font-size: large;
+        margin-bottom: 10px;
+    }
+
+    .modal .close {
+        cursor: pointer;
+        float: right;
+    }
+
+.new-user-form span.danger {
+    display: block;
+}
+
+footer {
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+}
+    
+    footer small {
+        margin-left: 10px;
+    }
+
+@media all and (max-width: 420px) {
+
+    .home section, .home aside {
+        margin: 1.858736059%;
+        float: none;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { 
+        border: 1px solid #ccc; 
+    } 
+
+    td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        width: 100%;
+        position: relative;
+        padding-left: 50%; 
+        height: 0px;
+        vertical-align: middle;
+        line-height: 30px;
+    }   
+
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            left: 6px;
+            width: 45%; 
+            padding-right: 10px; 
+            white-space: nowrap;
+        }
+
+        td:nth-of-type(1):before { 
+            content: "Name"; 
+        }
+
+        td:nth-of-type(2):before { 
+            content: "Age"; 
+        }
+
+        td:nth-of-type(3):before { 
+            content: "Email"; 
+        }
+
+        td:nth-of-type(4):before { 
+            content: "Phone"; 
+        }
+
+        td:nth-of-type(5):before { 
+            content: "State"; 
+        }
+    
+    .users tr:nth-child(2n) td {
+        background: none;
+    }
+    
+    .users .age, .users .email, .users .phone, .users .state {
+        width: 100%;
+    }
+
+    .users .name {
+        padding-left: 50%;
+        width: 100%;
+    }
+}
+

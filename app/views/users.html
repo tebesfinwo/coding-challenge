@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<nav>
+    <ul>
+        <li>
+            <a href="/" id="home">Home</a>
+        </li>
+        <li>
+            <a class="active" href="" id="users">Users</a>
+        </li>
+    </ul>
+</nav>
+<main class="users">
+    <section>
+        <h1>Random Users</h1>
+        <div class="filter">
+            <form method="post" action="/users" class="filter-form">
+                <div class="form-group">
+                    <label class="form-label">Age (Exp: 12 - 23):</label>
+                    <input type="number" name="from" class="form-field" min="1"> - <input type="number" name="to" class="form-field" min="1">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Gender:</label>
+                    <select name="gender" class="form-field">
+                        <option disabled selected>-- Select --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group" >
+                    <label class="form-label">State:</label>
+                    <select name="state" class="form-field">
+                        <option disabled selected>-- Select --</option>
+                        {% for state in states %}
+                            <option value="{{ state }}">{{ state }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="submit" value="filter">
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    <th class="age">Age</th>
+                    <th class="email">Email</th>
+                    <th class="phone">Phone</th>
+                    <th class="state">State</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr data-sha1={{ result.user.sha1 }}>
+                    <td class="name">{{ result.user.name.first }} {{ result.user.name.last }}</td>
+                    <td class="age">{{ result.user.age }}</td>
+                    <td class="email">{{ result.user.email }}</td>
+                    <td class="phone">{{ result.user.phone }}</td>
+                    <td class="state">{{ result.user.location.state }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+<dialog class="modal users-modal">
+    <span class="close">X</span>
+    <ul>
+        <li class="image"></li>
+        <li class="name"></li>
+        <li class="age"></li>
+        <li class="email"></li>
+        <li class="phone"></li>
+        <li class="state"></li>
+    </ul>
+</dialog>
+{% endblock %}
