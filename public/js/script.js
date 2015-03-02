@@ -3,6 +3,7 @@ var results;
 
 $(function() {
 	
+	//New User
 	$(document).on('submit', 'form.new-user-form', function(e){
 		e.preventDefault();
 
@@ -49,11 +50,13 @@ $(function() {
 
 	});
 
+	//clear all error messages
 	$(document).on('focus', '.new-user-form input', function(e){
 		var $spans = $('span.danger');
 		$spans.fadeOut('slow').remove();
 	});
 	
+	//Filter form
 	$(document).on('submit', 'form.filter-form', function(e){
 		
 		e.preventDefault();
@@ -98,6 +101,7 @@ $(function() {
 				});
 	});
 
+	//Show new User form 
 	$(document).on('click', 'main.home a.new-user', function(e){
 		e.preventDefault();
 		var $modal = $('dialog.new-user-modal');
@@ -105,6 +109,7 @@ $(function() {
 		$modal[0].show();
 	});
 		
+	//Overlay to show user's information 
 	$(document).on('click', 'main.users td.name', function(e){
 		e.preventDefault();
 		var self = $(this), 
@@ -128,15 +133,18 @@ $(function() {
 		$modal[0].show();
 	});
 
+	//
 	$(document).on('click', '.modal', function(e){
 		e.stopPropagation();
 	});
 
+	//close the dialog 
 	$(document).on('click', '.modal .close', function(e){
 		$('dialog.modal')[0].close();
 		$('body').removeClass('overlay');
 	});
 
+	//sort the row
 	$(document).on('click', 'th', function(){
 	    var table = $(this).parents('table').eq(0)
 	    var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
@@ -166,6 +174,7 @@ $(function() {
 });
 
 $(window).load(function(){
+	//obtain random users for future usage
 	if ( $('#users').length ){
 		$.getJSON('/users', function(data){
 			results = data.results;
